@@ -20,14 +20,14 @@ class SQLiquid {
 	 * Can instantiate with a pkey, or an array (or object) of values to be loaded
 	 */
 	public function __construct($load_id=false,$fields='')
-	{		
+	{
 		$this->_init();
 		
 		if ($load_id)
 		{
 			if (is_numeric($load_id))
 			{
-				$this->load($load_id,$fields);
+				$this->loadById($load_id,$fields);
 			}
 			else
 			{
@@ -153,7 +153,7 @@ class SQLiquid {
 	 * @param string $fields
 	 * @return bool
 	 */
-	public function load($load_id='',$fields='')
+	public function loadById($load_id='',$fields='')
 	{
 		if ($load_id)
 		{
